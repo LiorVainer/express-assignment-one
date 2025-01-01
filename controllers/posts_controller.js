@@ -2,6 +2,7 @@ const PostModel = require("../models/posts_model");
 
 const getAllPosts = async (req, res) => {
   const filter = req.query.owner;
+
   try {
     if (filter) {
       const posts = await PostModel.find({ owner: filter });
@@ -11,7 +12,7 @@ const getAllPosts = async (req, res) => {
       res.send(posts);
     }
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(500).send(error.message);
   }
 };
 
@@ -26,7 +27,7 @@ const getPostById = async (req, res) => {
       res.status(404).send("Post not found");
     }
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(500).send(error.message);
   }
 };
 
@@ -36,30 +37,32 @@ const createPost = async (req, res) => {
     const post = await PostModel.create(postBody);
     res.status(201).send(post);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(500).send(error.message);
   }
 };
 
 const updatePost = async (req, res) => {
   const postId = req.params.id;
-  const postBody = req.body
+  const postBody = req.body;
 
   try {
-    const updatedPost = await PostModel.findByIdAndUpdate(postId, postBody, { new: true })
+    const updatedPost = await PostModel.findByIdAndUpdate(postId, postBody, {
+      new: true,
+    });
 
     if (!updatedPost) {
-      res.status(404).send("Post not found")
+      res.status(404).send("Post not found");
     }
 
-    res.send(updatedPost)
+    res.send(updatedPost);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(500).send(error.message);
   }
-}
+};
 
 module.exports = {
   getAllPosts,
   createPost,
   getPostById,
-  updatePost
+  updatePost,
 };

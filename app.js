@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const postsRoute = require("./routes/posts_route");
+const tryCatchMiddleware = require("./middlewares/try_catch");
+
+app.use(tryCatchMiddleware);
 app.use("/posts", postsRoute);
 
 app.listen(port, () => {
