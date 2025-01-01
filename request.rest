@@ -1,0 +1,35 @@
+
+###
+
+GET http://localhost:3000/posts
+
+###
+
+GET http://localhost:3000/posts?owner=Kevin
+
+###
+
+GET http://localhost:3000/posts/6734b0c818a1cf8344804554
+
+###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "Hello",
+    "owner": "Kevin",
+    "content": "Hello World..."
+}
+
+
+###
+
+PUT http://localhost:3000/posts/67757ca8ded1dd0ab69182de
+Content-Type: application/json
+
+{
+    "title": "Updated Title",
+    "owner": "Kevin",
+    "content": "Updated content..."
+}
