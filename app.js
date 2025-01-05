@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 const postsRoute = require("./routes/posts_route");
+const commentsRoute = require("./routes/comments_route");
 
 const app = express();
 const port = process.env.PORT;
@@ -18,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use("/posts", postsRoute);
+app.use("/comments", commentsRoute);
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

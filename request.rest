@@ -33,3 +33,25 @@ Content-Type: application/json
     "sender": "Lior",
     "content": "Updated content..."
 }
+
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "userId": "Kevin",
+    "postId": "67757ca8ded1dd0ab69182de",
+    "content": "My first comment"
+}
+
+###
+
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/posts/677ae5240f71d00c454d1d1a
+
+###
