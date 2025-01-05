@@ -3,8 +3,6 @@ const PostModel = require("../models/posts_model");
 const getAllPosts = async (req, res) => {
   const sender = req.query.sender;
 
-  console.log({sender});
-
   try {
     if (sender) {
       const posts = await PostModel.find({ sender });
