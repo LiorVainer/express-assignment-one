@@ -5,11 +5,11 @@ GET http://localhost:3000/posts
 
 ###
 
-GET http://localhost:3000/posts?owner=Kevin
+GET http://localhost:3000/posts?sender=Lior
 
 ###
 
-GET http://localhost:3000/posts/6734b0c818a1cf8344804554
+GET http://localhost:3000/posts/677acaa66909ab5af8ba2dbe
 
 ###
 
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 {
     "title": "Hello",
-    "owner": "Kevin",
+    "sender": "Lior",
     "content": "Hello World..."
 }
 
@@ -30,6 +30,6 @@ Content-Type: application/json
 
 {
     "title": "Updated Title",
-    "owner": "Kevin",
+    "sender": "Lior",
     "content": "Updated content..."
 }

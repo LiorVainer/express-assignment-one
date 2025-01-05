@@ -1,22 +1,22 @@
 const express = require("express");
-const app = express();
-const dotenv = require("dotenv").config();
-const port = process.env.PORT;
+const bodyParser = require("body-parser");
+require("dotenv").config();
 
 const mongoose = require("mongoose");
+const postsRoute = require("./routes/posts_route");
+
+const app = express();
+const port = process.env.PORT;
+
 mongoose.connect(process.env.DB_CONNECT);
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to database"));
 
-const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const postsRoute = require("./routes/posts_route");
-const tryCatchMiddleware = require("./middlewares/try_catch");
 
-app.use(tryCatchMiddleware);
 app.use("/posts", postsRoute);
 
 app.listen(port, () => {
