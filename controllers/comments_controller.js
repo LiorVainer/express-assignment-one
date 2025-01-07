@@ -1,4 +1,5 @@
 const commentModel = require("../models/comments_model");
+const postModel = require("../models/posts_model");
 
 const getAllComments = async (req, res) => {
     try {
@@ -26,7 +27,14 @@ const getCommentById = async (req, res) => {
 
 const createComment = async (req, res) => {
   const commentBody = req.body;
+
   try {
+    // Check if the postId exists
+    const postExists = await postModel.findById(commentBody.postId);
+    if (!postExists) {
+      return res.status(400).send("Invalid postId: Post does not exist");
+    }
+
     const comment = await commentModel.create(commentBody);
     res.status(201).send(comment);
   } catch (error) {

@@ -41,8 +41,8 @@ POST http://localhost:3000/comments
 Content-Type: application/json
 
 {
-    "userId": "Kevin",
-    "postId": "67757ca8ded1dd0ab69182de",
+    "userId": "Kevin3",
+    "postId": "666",
     "content": "My first comment"
 }
 
@@ -52,7 +52,7 @@ GET http://localhost:3000/comments
 
 ###
 
-GET http://localhost:3000/comments/677ae6bffe86caf6ab1e6123
+GET http://localhost:3000/comments/677ae6c4fe86caf6ab1e6126
 
 ###
 
