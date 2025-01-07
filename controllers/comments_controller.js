@@ -69,10 +69,27 @@ const deleteComment = async (req, res) => {
     }
   };
 
+  const getCommentsByPostId = async (req, res) => {
+    const postId = req.params.postId;
+  
+    try {
+      const comments = await commentModel.find({ postId });
+  
+      if (comments.length === 0) {
+        return res.status(404).send("No comments found for this post");
+      }
+  
+      res.send(comments);
+    } catch (error) {
+      res.status(500).send(error.message);
+    }
+  };
+
 module.exports = {
     getAllComments,
     getCommentById,
     createComment,
     updateComment,
-    deleteComment
+    deleteComment,
+    getCommentsByPostId
 };
