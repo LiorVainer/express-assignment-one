@@ -33,3 +33,43 @@ Content-Type: application/json
     "sender": "Lior",
     "content": "Updated content..."
 }
+
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "sender": "Kevin3",
+    "postId": "677acaa66909ab5af8ba2dbf",
+    "content": "My first comment"
+}
+
+###
+
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/comments/677ae6c4fe86caf6ab1e6126
+
+###
+
+PUT http://localhost:3000/comments/677ae6bffe86caf6ab1e6123
+Content-Type: application/json
+
+{
+    "sender": "Kevin",
+    "postId": "67757ca8ded1dd0ab69182de",
+    "content": "My second comment"
+}
+
+###
+
+DELETE http://localhost:3000/comments/677ae6bffe86caf6ab1e6123
+
+###
+
+GET http://localhost:3000/comments/post/67757ca8ded1dd0ab69182de
+
