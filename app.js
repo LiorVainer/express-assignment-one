@@ -1,3 +1,5 @@
+// lior-vainer-322780941-rom-pollak-325106409
+
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
@@ -17,10 +19,8 @@ db.once("open", () => console.log("Connected to database"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 app.use("/posts", postsRoute);
 app.use("/comments", commentsRoute);
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

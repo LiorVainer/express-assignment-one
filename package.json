@@ -1,14 +1,13 @@
 {
-  "name": "app_c",
+  "name": "assignment-one",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "author": "Eliav Menachi",
+  "author": "Lior Vainer & Rom Pollak",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",

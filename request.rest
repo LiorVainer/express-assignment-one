@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/posts/67757ca8ded1dd0ab69182de
+PUT http://localhost:3000/posts/677acaa66909ab5af8ba2dbe
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 {
     "sender": "Kevin3",
-    "postId": "677acaa66909ab5af8ba2dbf",
+    "postId": "677acaa66909ab5af8ba2dbe",
     "content": "My first comment"
 }
 
@@ -52,11 +52,11 @@ GET http://localhost:3000/comments
 
 ###
 
-GET http://localhost:3000/comments/677ae6c4fe86caf6ab1e6126
+GET http://localhost:3000/comments/677ebe39d09e0306a94ec529
 
 ###
 
-PUT http://localhost:3000/comments/677ae6bffe86caf6ab1e6123
+PUT http://localhost:3000/comments/677ebe39d09e0306a94ec529
 Content-Type: application/json
 
 {
@@ -66,10 +66,9 @@ Content-Type: application/json
 }
 
 ###
-
-DELETE http://localhost:3000/comments/677ae6bffe86caf6ab1e6123
+GET http://localhost:3000/comments/post/677acaa66909ab5af8ba2dbe
 
 ###
+DELETE http://localhost:3000/comments/677ebe39d09e0306a94ec529
 
-GET http://localhost:3000/comments/post/67757ca8ded1dd0ab69182de
 
