@@ -41,8 +41,8 @@ POST http://localhost:3000/comments
 Content-Type: application/json
 
 {
-    "userId": "Kevin3",
-    "postId": "666",
+    "sender": "Kevin3",
+    "postId": "677acaa66909ab5af8ba2dbf",
     "content": "My first comment"
 }
 
@@ -60,7 +60,7 @@ PUT http://localhost:3000/comments/677ae6bffe86caf6ab1e6123
 Content-Type: application/json
 
 {
-    "userId": "Kevin",
+    "sender": "Kevin",
     "postId": "67757ca8ded1dd0ab69182de",
     "content": "My second comment"
 }

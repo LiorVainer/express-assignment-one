@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
-  userId: {
+  sender: {
     type: String,
     required: true,
   },
